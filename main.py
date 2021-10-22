@@ -33,7 +33,7 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # 戻り値 #################
 # _ : しきい値を返す。150を返す。
-# img : 多次元配列(numpy.ndarray)を返す。
+# gray : 多次元配列(numpy.ndarray)を返す。
 #########################
 _, gray = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
 
