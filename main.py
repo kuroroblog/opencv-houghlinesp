@@ -58,7 +58,10 @@ if lines is not None:
         # 第一引数 : 多次元配列(numpy.ndarray)
         # 第二引数 : 線分開始座標
         # 第三引数 : 線分終了座標
+        #######################
         # 第四引数 : 線分の色情報。BGR(Blue, Green, Red)形式で指定。
+        # ※ 検出される線分を消したい場合は、第四引数へ線分の周りと同系の色を指定ください。Chrome拡張機能の「ColorZilla」などを用いて、同系の色を調べると良いでしょう。(https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp/reviews?hl=ja)
+        #######################
         cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0))
 
     # imwrite : 画像の保存を行う関数
