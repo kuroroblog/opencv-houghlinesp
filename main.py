@@ -54,14 +54,15 @@ lines = cv2.HoughLinesP(gray, 1, np.radians(1), 240, maxLineGap=50)
 if lines is not None:
     # squeeze関数について : https://jellyware.jp/kurage/openvino/c06_numpy.html
     for x1, y1, x2, y2 in lines.squeeze():
-        # line : 線分情報を元に、画像へ線分を書き込む関数
+        # line関数 : 画像内へ線分を描画する関数
+        # line関数について : https://kuroro.blog/python/08XlKyvdgaRJCCqlEoNT/
         # 第一引数 : 多次元配列(numpy.ndarray)
-        # 第二引数 : 線分開始座標
-        # 第三引数 : 線分終了座標
+        # 第二引数 : 線分の始点の座標。
+        # 第三引数 : 線分の終点の座標。
         #######################
-        # 第四引数 : 線分の色情報。BGR(Blue, Green, Red)形式で指定。
+        # 第四引数 : 線分の色を指定する。B(Blue)G(Green)R(Red)形式で指定する。
         # ※ 検出される線分を消したい場合は、第四引数へ線分の周りと同系の色を指定ください。Chrome拡張機能の「ColorZilla」などを用いて、同系の色を調べると良いでしょう。(https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp/reviews?hl=ja)
-        #######################
+        ####################### 
         cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0))
 
     # imwrite : 画像の保存を行う関数
