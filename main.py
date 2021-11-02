@@ -22,6 +22,7 @@ if img is None:
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # threshold関数 : しきい値を用いて画素の色を示す値を2値化するための関数。
+# thresholdについて : https://kuroro.blog/python/jofbNumJ9HtfTxnM8QHJ/
 
 # 第一引数 : 多次元配列(numpy.ndarray)
 # 第二引数 : しきい値。float型。150とする。
